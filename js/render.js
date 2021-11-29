@@ -20,15 +20,15 @@ const createCardsList = (data) => {
                     <p>Max: ${item.main.temp_max}°</p>
                 </div>
             </li>`)
-        .join('');
-
-    const wrapperCards = document.querySelector('.wrapper__cards');
+        .join('');    
 
     render(wrapperCards, 
         `<h2>Provinces List</h2>
         <ul class="list__cards">${cards}</ul>`
     );
 };
+
+const wrapperCards = document.querySelector('.wrapper__cards');
 
 export {
     createCardsList
