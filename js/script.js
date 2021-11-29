@@ -1,5 +1,6 @@
 import { APIendpoints } from "./data.js";
 import { createCardsList } from "./render.js";
+import { showSelectedCity } from "./select.js";
 
 
 
@@ -8,16 +9,18 @@ const loadCards = () => {
         fetch(item)
             .then(response => response.json())
             .then(data => {
-                // console.log(data); 
                 cities.push(data); 
                 createCardsList(cities);
             })
     );
 };
 
-const cities = [];
+export const cities = [];
 
 
-document.addEventListener("DOMContentLoaded", loadCards());
+document.addEventListener("DOMContentLoaded", () =>{
+    loadCards();
+    showSelectedCity(cities);
+});
 
 
