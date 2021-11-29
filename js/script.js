@@ -2,6 +2,7 @@ import { APIendpoints } from "./data.js";
 import { createCardsList } from "./render.js";
 
 
+
 const loadCards = () => {
     APIendpoints.map( item =>
         fetch(item)
