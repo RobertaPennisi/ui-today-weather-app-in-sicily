@@ -5,7 +5,7 @@ const createCardsList = (data) => {
     const cards = data
         .map(item =>
             `<li>
-                <p>${item.name}</p>
+                <p>${item.name} ${item.weather[0].main}</p>
             </li>`)
         .join('');
 

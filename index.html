@@ -4,12 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>UI Today Weather App in Sicily</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
 
-    <title>UI Today Weather App in Sicily</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
+    <header>
+        <div class="site-identity">
+            <i class="fas fa-cloud-sun-rain"></i>
+            <h1>UI Today Weather App in Sicily</h1>
+        </div>
+        <div class="navigation">
+            <label for="select-cities">Select a city:</label>
+
+            <select name="select-cities" id="select-cities">
+                <option value="all">All</option>
+                <option value="agrigento">Agrigento</option>
+                <option value="caltanissetta">Caltanissetta</option>
+                <option value="catania">Catania</option>
+                <option value="enna">Enna</option>
+                <option value="messina">Messina</option>
+                <option value="palermo">Palermo</option>
+                <option value="ragusa">Ragusa</option>
+                <option value="siracusa">Siracusa</option>
+                <option value="trapani">Trapani</option>
+            </select>
+        </div> 
+    </header>
     <main>
         <div class="wrapper__cards">
            <!-- Code injected by live-server --> 
