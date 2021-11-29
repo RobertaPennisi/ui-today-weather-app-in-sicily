@@ -16,7 +16,8 @@ const loadCards = () => {
 };
 
 export const cities = [];
-
+const date = new Date();
+document.getElementById('today').textContent = date.toDateString();
 
 document.addEventListener("DOMContentLoaded", () =>{
     loadCards();
