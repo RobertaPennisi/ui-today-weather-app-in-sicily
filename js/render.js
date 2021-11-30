@@ -30,5 +30,6 @@ const createCardsList = (data) => {
 const wrapperCards = document.querySelector('.wrapper__cards');
 
 export {
-    createCardsList
+    createCardsList, 
+    render
 }
