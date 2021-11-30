@@ -1,5 +1,5 @@
 /*global style*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,600;0,700;1,100;1,400;1,600;1,700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -27,12 +27,42 @@ header .site-identity, header .navigation{
 
 header i{
     font-size: 2.5rem;
-    color: darkblue;
+    color: #EC6E4C;
 }
+
+header h1{
+    font-size: 1rem;
+    line-height: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0 15px;
+    max-width: 120px;
+}
+
+.navigation p{
+    font-size: 1.6rem;
+    padding-right: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.navigation label{
+    padding-right: 10px;
+}
+.navigation select{
+    border-radius: 20px;
+    color: #EC6E4C;
+    border:none;
+    padding: 3px 5px;
+}
+.navigation select:hover{
+    box-shadow: 0 0 5px #ec944c;
+    cursor: pointer;
+}
+
 
 /*cards style*/
 div.wrapper__cards{
-    padding: 3%;
+    padding: 1% 3%;
     color: #fff;
 }
 
@@ -45,12 +75,18 @@ ul.list__cards {
 }
 
 ul.list__cards li{
+    min-height: 250px;
     padding: 20px;
-    background: #707070;
+    background-color: #202020e8;
     border-radius: 10px;
+    box-shadow: 0 0 8px #2020207e;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    background-position:center;
+    background-size: cover;
+    background-blend-mode:soft-light;
 }
 
 .basic_info, .advanced_info{
@@ -59,6 +95,116 @@ ul.list__cards li{
     justify-content: space-around;
 }
 
+.basic_info h3{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.basic_info span{
+    font-size: 2rem;
+}
+
+.icon img{
+    filter: saturate(125%); 
+}
+
 .info{
-    width: 150px;
+    width: 180px;
+}
+
+.agrigento {
+    background-image: url("https://cdn.pixabay.com/photo/2018/09/08/16/55/the-valley-of-the-temples-3662838_960_720.jpg");
+}
+.catania {
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/16/18/28/etna-1598676_960_720.jpg");
+}
+.palermo {
+    background-image: url("https://cdn.pixabay.com/photo/2020/10/06/18/18/palermo-5632971_960_720.jpg");
+}
+.siracusa {
+    background-image: url("https://cdn.pixabay.com/photo/2018/06/23/13/30/restaurant-3492711_960_720.jpg");
+}
+.caltanissetta {
+    background-image: url("https://sycylia.pl/wp-content/uploads/2019/04/panorama-of-caltanissetta-sicily-italy-europe_Caltanissetta-by-Simoncountry-shutterstock_1095597548-scaled.jpg");
+}
+.messina {
+    background-image: url("https://cdn.pixabay.com/photo/2017/01/30/23/51/messina-2022382_960_720.jpg");
+}
+.enna {
+    background-image: url("https://sycylia.pl/wp-content/uploads/2019/03/piazza-armerina-in-the-enna-province-of-sicily-in-italy-piaz_Piazza-Armerina-in-the-Enna-province-of-Sicily-in-Italy-by-DaLiu-shutterstock_1810970104-scaled.jpg");
+}
+.ragusa {
+    background-image: url("https://cdn.pixabay.com/photo/2017/09/18/08/09/ragusa-2760912_960_720.jpg");
+}
+.trapani {
+    background-image: url("https://cdn.pixabay.com/photo/2021/02/03/15/13/trapani-5978282_960_720.jpg");
+}
+
+/*footer style*/
+footer{
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+footer a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/*start responsive*/
+@media screen and (max-width: 1200px) {
+    .advanced_info p{
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    ul.list__cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header{
+        padding: 20px 20px;
+    }
+
+    header .navigation{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .navigation p{
+        font-size: 1rem;
+        padding-right: 0px;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 0rem;
+    }
+
+    .navigation label{
+        text-align: right;
+        padding-right: 0px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        padding-bottom: 10px;
+
+    }
+    .navigation select{
+        border-radius: 20px;
+        color: #EC6E4C;
+        border:none;
+        padding: 3px 5px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    ul.list__cards {
+        grid-template-columns: 1fr;
+    }
+    .navigation p{
+        line-height: 1rem;
+    }
 }
