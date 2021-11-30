@@ -7,7 +7,7 @@ const createSingleCard = (data) => {
             `
             <section class="single-city-recap">
                 
-                    <div class="recap-left ${item.id}">
+                    <div class="recap-left" id="${item.id}">
                         <h3>${item.name}</h3>
                         <p>Lon: ${item.coord.lon} Lat: ${item.coord.lat}</p>
                     </div>

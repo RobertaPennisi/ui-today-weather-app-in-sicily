@@ -13,17 +13,51 @@ export const showSelectedCity = (data) => {
         
             createSingleCard(result);
         
-        if (selectedCity === "all") {
-            createCardsList(cities);
-            document.getElementById('2525763').classList.add('agrigento');
-            document.getElementById('2525068').classList.add('catania');
-            document.getElementById('2523918').classList.add('palermo');
-            document.getElementById('2523082').classList.add('siracusa');
-            document.getElementById('2525447').classList.add('caltanissetta');
-            document.getElementById('2524170').classList.add('messina');
-            document.getElementById('2524819').classList.add('enna');
-            document.getElementById('2523649').classList.add('ragusa');
-            document.getElementById('2522875').classList.add('trapani');   
+        switch (selectedCity) {
+            case "agrigento":
+                document.getElementById('2525763').classList.add('agrigento');
+                break;
+            case "caltanissetta":
+                    document.getElementById('2525447').classList.add('caltanissetta');
+                    break;
+
+            case "catania":
+                    document.getElementById('2525068').classList.add('catania');    
+                    break;
+                
+            case "enna":
+                    document.getElementById('2524819').classList.add('enna');
+                    break;
+
+            case "messina":
+                    document.getElementById('2524170').classList.add('messina');
+                    break;
+            case "palermo":
+                    document.getElementById('2523918').classList.add('palermo');
+                    break;
+            case "syracuse":
+                    document.getElementById('2523082').classList.add('siracusa');
+                    break;
+
+            case "ragusa":
+                    document.getElementById('2523649').classList.add('ragusa');
+                    break;
+            case "trapani":
+                    document.getElementById('2522875').classList.add('trapani');
+                    break; 
+        
+            default:
+                createCardsList(cities);
+                document.getElementById('2525763').classList.add('agrigento');
+                document.getElementById('2525068').classList.add('catania');
+                document.getElementById('2523918').classList.add('palermo');
+                document.getElementById('2523082').classList.add('siracusa');
+                document.getElementById('2525447').classList.add('caltanissetta');
+                document.getElementById('2524170').classList.add('messina');
+                document.getElementById('2524819').classList.add('enna');
+                document.getElementById('2523649').classList.add('ragusa');
+                document.getElementById('2522875').classList.add('trapani');
+                break;
         }
     });
 }
