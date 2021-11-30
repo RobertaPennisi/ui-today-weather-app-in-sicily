@@ -1,10 +1,11 @@
-const render = (wrapper, content) => wrapper.innerHTML = content;
+import { render } from "./render.js";
 
-const createCardsList = (data) => {
+const createSingleCard = (data) => {
     
-    const cards = data
+    const singleCardTemplate = data
         .map(item =>
-            `<li id="${item.id}">
+            `
+            <section class="single-city-recap">
                 <div class="basic_info">
                     <div class="icon">
                         <img src="http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png">
@@ -14,22 +15,24 @@ const createCardsList = (data) => {
                         <p><span>${item.main.temp}° | </span> ${item.weather[0].main}</p>
                     </div>
                 </div>
+            </section>
+            <section class="single-city-temp-wind">
                 <div class="advanced_info">
                     <p>Perceived: ${item.main.feels_like}°</p>
                     <p><i class="fas fa-temperature-low"></i> Min: ${item.main.temp_min}°</p>
                     <p><i class="fas fa-temperature-high"></i> Max: ${item.main.temp_max}°</p>
                 </div>
-            </li>`)
+            </section>
+            `)
         .join('');    
             
     render(wrapperCards, 
-        `<ul class="list__cards">${cards}</ul>`
+        `<div>${singleCardTemplate}<div>`
     );
 };
 
 const wrapperCards = document.querySelector('.wrapper__cards');
 
 export {
-    createCardsList, 
-    render
+    createSingleCard
 }
