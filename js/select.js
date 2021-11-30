@@ -1,4 +1,5 @@
 import { createCardsList } from "./render.js";
+import { createSingleCard } from "./render-single.js";
 import { cities } from "./script.js";
 
 export const showSelectedCity = (data) => {
@@ -10,7 +11,7 @@ export const showSelectedCity = (data) => {
         const result = data.filter((element) => 
             element.name.toLowerCase().search(selectedCity) > -1)
         
-        createCardsList(result);
+            createSingleCard(result);
         
         if (selectedCity === "all") {
             createCardsList(cities);
