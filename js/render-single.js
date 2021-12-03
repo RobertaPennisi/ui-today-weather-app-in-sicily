@@ -1,5 +1,10 @@
 import { render } from "./render.js";
 
+const hideGlobalSearch = (value) => {
+    const globalSearchWrapper = document.querySelector(".wrapper__global");
+    globalSearchWrapper.style.display = value;
+} 
+
 const createSingleCard = (data) => {
     
     const singleCardTemplate = data
@@ -36,7 +41,9 @@ const createSingleCard = (data) => {
             </section>
             `)
         .join('');    
-            
+    
+    hideGlobalSearch("none");
+        
     render(wrapperCards, 
         `<div class ="wrapper_single_card">${singleCardTemplate}<div>`
     );
@@ -46,5 +53,6 @@ const createSingleCard = (data) => {
 const wrapperCards = document.querySelector('.wrapper__cards');
 
 export {
-    createSingleCard
+    createSingleCard,
+    hideGlobalSearch
 }
