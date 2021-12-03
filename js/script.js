@@ -1,7 +1,7 @@
 import { APIendpoints } from "./data.js";
 import { createCardsList } from "./render.js";
 import { showSelectedCity } from "./select.js";
-
+import { createCardSearched } from "./render-global.js";
 
 
 
@@ -28,15 +28,29 @@ const loadCards = () => {
     );
 };
 
+const loadGlobalSearch = (city) => {
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=f510205af3c2d79e1d719d64b4e105a2")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            createCardSearched(data)
+        })
+}
+
 export const cities = [];
 const date = new Date();
 document.getElementById('today').textContent = date.toDateString();
-
-
+const formSearch = document.querySelector("#search-global");
 
 document.addEventListener("DOMContentLoaded", () =>{
     loadCards();
     showSelectedCity(cities);
 });
 
+formSearch.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let searchedCity = event.target.search.value;
+    console.log(searchedCity)
+    loadGlobalSearch(searchedCity.toLowerCase())
+})
 

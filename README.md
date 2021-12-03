@@ -12,3 +12,4 @@
 - Content is generated dynamically through JavaScript.
 - Select a city to display its detailed card. 
 - The icon changes dynamically based on the weather information.
+- **NEW** Added a new section where you can search weather for the city you want.

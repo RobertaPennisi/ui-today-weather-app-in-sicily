@@ -1,6 +1,7 @@
 import { createCardsList } from "./render.js";
-import { createSingleCard } from "./render-single.js";
+import { createSingleCard, hideGlobalSearch } from "./render-single.js";
 import { cities } from "./script.js";
+
 
 export const showSelectedCity = (data) => {
     const select = document.getElementById('select-cities');
@@ -47,6 +48,7 @@ export const showSelectedCity = (data) => {
                     break; 
         
             default:
+                hideGlobalSearch("flex");
                 createCardsList(cities);
                 document.getElementById('2525763').classList.add('agrigento');
                 document.getElementById('2525068').classList.add('catania');
